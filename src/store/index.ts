@@ -5,16 +5,15 @@ import { StateBookStorage } from "./ducks/bookstorage/types";
 import rootReducer from "./ducks/rootReducer";
 import rootSaga from "./ducks/rootSaga";
 
-export interface ApllicationState {
+export interface ApplicationState {
   bookStorage: StateBookStorage;
 }
 
 
-const sagaMiddleware=createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware();
 
+const store: Store<ApplicationState> = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
-const store: Store<ApllicationState> = createStore(rootReducer, applyMiddleware());
-
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga);
 
 export default store;

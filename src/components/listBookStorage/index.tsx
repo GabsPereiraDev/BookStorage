@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ApllicationState } from "../../store";
+import { ApplicationState } from "../../store";
 import { bindActionCreators } from "redux";
 import * as RepositoriesActions from "../../store/ducks/bookstorage/types";
 
 export const RepositoryList = () => {
   const repositories = useSelector(
-    (state: ApllicationState) => state.bookStorage.data
+    (state: ApplicationState) => state.bookStorage.data
   );
 
   return (

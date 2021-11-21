@@ -4,9 +4,9 @@ import { load } from './bookstorage/sagas';
 
 
 
+
 export default function* rootSaga():any{
-    const  rootSaga = yield all([
-        takeLatest(BookStorageTypes.LOAD_REQUEST, load)
-    ])
-    return rootSaga
+    return yield all([
+        takeLatest(BookStorageTypes.LOAD_REQUEST, load),
+      ]);
 }

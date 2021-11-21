@@ -1,8 +1,8 @@
 import axios from "axios";
-import { DataBookStorage } from "../store/ducks/bookstorage/types";
+
 
 const api = axios.create({
-    baseURL:'http://localhost:4000/'
+    baseURL:'http://localhost:8000/author'
 })
 
 export default api

@@ -6,20 +6,11 @@ export enum BookStorageTypes {
 
 
 export interface BookStorage {
-  id: string;
+  _id: string;
   book: string;
   author: string;
 }
 
-
-
-export interface DataBookStorage {
-  data: BookStorage[];
-}
-
-export interface DataRespositoryRepository{
-  response:DataBookStorage[]
-}
 
 export interface StateBookStorage {
   readonly data: BookStorage[];

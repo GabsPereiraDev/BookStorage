@@ -6,7 +6,7 @@ import { loadSuccces, loadFailure } from './actions';
 
 export function* load():any{
     try{
-        const response = yield call(api.get, 'author')
+        const response = yield call(api.get, "")
 
         yield put(loadSuccces(response.data))
 }catch(error){

@@ -4,7 +4,7 @@ import { StateBookStorage, BookStorageTypes } from "./types";
 const INITIAL_STATE: StateBookStorage = {
   data: [
     {
-      id: "",
+      _id: "",
       author: "",
       book: "",
     },
@@ -16,7 +16,7 @@ const INITIAL_STATE: StateBookStorage = {
 const reducer: Reducer<StateBookStorage> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case BookStorageTypes.LOAD_REQUEST:
-      return { ...state, loading: true, error: false };
+      return { ...state, loading: true};
     case BookStorageTypes.LOAD_SUCCCES:
       return {
         ...state,

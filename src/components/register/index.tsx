@@ -29,7 +29,7 @@ export const RegisterBook = () => {
         }}
         onSubmit={async (values: CreateBooks) => {
           try {
-            const { data } = await api.post<CreateBooks>(`/author`, values);
+            const { data } = await api.post<CreateBooks>(`/books`, values);
           } catch (error) {}
           
         }}

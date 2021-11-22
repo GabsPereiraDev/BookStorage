@@ -1,30 +1,32 @@
 import { Reducer } from "redux";
-import { StateBookStorage, BookStorageTypes } from "./types";
+import { StateAuthorsStorage, AuthorsStorageTypes } from "./types";
 
-const INITIAL_STATE: StateBookStorage = {
+const INITIAL_STATE: StateAuthorsStorage = {
   data: [
     {
       _id: "",
-      author: "",
-      book: "",
+      name: "",
     },
   ],
   error: false,
   loading: false,
 };
 
-const reducer: Reducer<StateBookStorage> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<StateAuthorsStorage> = (
+  state = INITIAL_STATE,
+  action
+) => {
   switch (action.type) {
-    case BookStorageTypes.LOAD_REQUEST:
-      return { ...state, loading: true};
-    case BookStorageTypes.LOAD_SUCCCES:
+    case AuthorsStorageTypes.LOAD_REQUEST:
+      return { ...state, loading: true };
+    case AuthorsStorageTypes.LOAD_SUCCCES:
       return {
         ...state,
         loading: false,
         error: false,
         data: action.payload.data,
       };
-    case BookStorageTypes.LOAD_FAILURE:
+    case AuthorsStorageTypes.LOAD_FAILURE:
       return { ...state, loading: false, error: true, data: [] };
     default:
       return state;

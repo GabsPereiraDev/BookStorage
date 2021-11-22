@@ -7,8 +7,8 @@ export enum BookStorageTypes {
 
 export interface BookStorage {
   _id: string;
-  book: string;
-  author: string;
+  title: string;
+  authorId: string;
 }
 
 
